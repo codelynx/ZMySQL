@@ -54,17 +54,11 @@ public class ZMySQLQuery {
 		self.database = database
 		self.query = query
 	}
-	public func execute() -> ZMySQLResult? {
+	@discardableResult
+	public func execute() -> ZMySQLResult {
 		mysql_real_query(self.database.mySQL, self.query, UInt(strlen(self.query)))
-		if let res = mysql_use_result(self.database.mySQL) {
-			let metadata = mysql_result_metadata(res)
-			print(metadata)
-			return ZMySQLResult(query: self, res: res)
-		}
-		else {
-			print(self.database.error)
-		}
-		return nil
+		let res = mysql_use_result(self.database.mySQL)
+		return ZMySQLResult(query: self, res: res)
 	}
 }
 
@@ -79,16 +73,18 @@ public class ZMySQLResult: Sequence {
 		}
 	}
 	let query: ZMySQLQuery
-	let res: UnsafeMutablePointer<MYSQL_RES>
-	init(query: ZMySQLQuery, res: UnsafeMutablePointer<MYSQL_RES>) {
+	let res: UnsafeMutablePointer<MYSQL_RES>!
+	init(query: ZMySQLQuery, res: UnsafeMutablePointer<MYSQL_RES>!) {
 		self.query = query
 		self.res = res
 	}
 	deinit {
-		mysql_free_result(UnsafeMutablePointer(self.res))
+		if self.res != nil {
+			mysql_free_result(UnsafeMutablePointer(self.res))
+		}
 	}
 	public func nextRow() -> ZMySQLRow? {
-		if let row = mysql_fetch_row(self.res) {
+		if self.res != nil, let row = mysql_fetch_row(self.res) {
 			return ZMySQLRow(result: self, row: UnsafeMutablePointer<MYSQL_ROW>(OpaquePointer(row)))
 		}
 		return nil
