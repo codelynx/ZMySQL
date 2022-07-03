@@ -12,18 +12,13 @@ import mysql
 extension String: Error {
 }
 
-public class ZMySQLDatabase {
+public class ZMySQLDatabase: CustomStringConvertible {
 	public static let utf8mb4 = "utf8mb4"
 	let mySQL: UnsafeMutablePointer<MYSQL>
-	public init(socket: String, username: String, password: String, port: UInt32, database: String) {
-		fatalError("not tested yet")
-		let flags: UInt = 0
-		guard let mySQL = mysql_init(nil) else { fatalError() }
-		let result = mysql_real_connect(mySQL, nil, username, password, database, port, socket, flags)
-		guard let result = result, result == mySQL else { fatalError() }
-		self.mySQL = mySQL
-		if mysql_set_character_set(mySQL, Self.utf8mb4) != 0 { fatalError() }
-	}
+	let host: String
+	let port: UInt32
+	let username: String
+	let database: String
 	public init(host: String, port: UInt32, username: String, password: String, database: String) {
 		guard let mySQL = mysql_init(nil) else { fatalError() }
 		let result = mysql_real_connect(mySQL, host, username, password, database, port, nil, 0)
@@ -33,6 +28,10 @@ public class ZMySQLDatabase {
 		assert(result == mySQL)
 		if mysql_set_character_set(mySQL, Self.utf8mb4) != 0 { fatalError() }
 		self.mySQL = mySQL
+		self.host = host
+		self.port = port
+		self.username = username
+		self.database = database
 	}
 	public func query(_ query: String) -> ZMySQLQuery {
 		return ZMySQLQuery(database: self, query: query)
@@ -42,6 +41,9 @@ public class ZMySQLDatabase {
 	}
 	var error: String {
 		return String(cString: mysql_error(mySQL))
+	}
+	public var description: String {
+		return "\(Self.self): host=\(self.host), port=\(port), user=\(self.username), database=\(self.database)"
 	}
 }
 
@@ -66,9 +68,18 @@ public class ZMySQLQuery {
 	}
 }
 
-public class ZMySQLResult {
+public class ZMySQLResult: Sequence {
+	public struct Iterator: IteratorProtocol {
+		let result: ZMySQLResult
+		init(result: ZMySQLResult) {
+			self.result = result
+		}
+		mutating public func next() -> ZMySQLRow? {
+			return result.nextRow()
+		}
+	}
 	let query: ZMySQLQuery
-	var res: UnsafeMutablePointer<MYSQL_RES>
+	let res: UnsafeMutablePointer<MYSQL_RES>
 	init(query: ZMySQLQuery, res: UnsafeMutablePointer<MYSQL_RES>) {
 		self.query = query
 		self.res = res
@@ -78,7 +89,6 @@ public class ZMySQLResult {
 	}
 	public func nextRow() -> ZMySQLRow? {
 		if let row = mysql_fetch_row(self.res) {
-			aaa()
 			return ZMySQLRow(result: self, row: UnsafeMutablePointer<MYSQL_ROW>(OpaquePointer(row)))
 		}
 		return nil
@@ -93,15 +103,9 @@ public class ZMySQLResult {
 	public var numberOfColumns: Int {
 		return Int(mysql_num_fields(self.res))
 	}
-	func aaa() {
-		let numberOfFields = mysql_num_fields(self.res)
-		let fields: [UnsafeMutablePointer<MYSQL_FIELD>] = (0..<numberOfFields).map { mysql_fetch_field_direct(self.res, $0) }
-		print(fields)
+	public func makeIterator() -> Iterator {
+		return Iterator(result: self)
 	}
-//	public func byteLengths() -> [Int] {
-//		guard let lengths: UnsafeMutablePointer<UInt> = mysql_fetch_lengths(self.res) else { fatalError() }
-//		return Array(UnsafeBufferPointer(start: lengths, count: self.numberOfColumns)).map { Int($0) }
-//	}
 }
 
 public class ZMySQLRow: CustomStringConvertible {
@@ -129,7 +133,7 @@ public class ZMySQLRow: CustomStringConvertible {
 		return nil
 	}
 	public var description: String {
-		return self.result.columns.map { $0.name }.joined(separator: "\r")
+		return zip(self.columns, self.values).map { "\($0.0.name): \($0.1)"  }.joined(separator: ", ")
 	}
 	var values: [Any?] {
 		return self.result.columns.map { $0.value(pointer: self.row[$0.index], length: self.lengths[$0.index]) }
@@ -202,7 +206,6 @@ public class ZMySQLColumn {
 	func value(pointer: UnsafeRawPointer, length: Int) -> Any? {
 		let data = Data(bytes: pointer, count: length)
 		let string = String(bytes: data, encoding: .utf8)
-		print(self.field.type.description)
 		switch (self.field.type) {
 		case MYSQL_TYPE_DECIMAL, MYSQL_TYPE_NEWDECIMAL:
 			return string.flatMap { Decimal(string: $0) }

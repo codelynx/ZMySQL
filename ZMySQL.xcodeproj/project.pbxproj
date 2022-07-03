@@ -30,7 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CC6EDAAB287166860053475D /* ZMySQL_mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZMySQL_mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC6EDAAB287166860053475D /* ZMySQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZMySQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6EDAAE287166860053475D /* ZMySQL_mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMySQL_mac.h; sourceTree = "<group>"; };
 		CC6EDAB6287166B80053475D /* my_command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = my_command.h; sourceTree = "<group>"; };
 		CC6EDAB7287166B80053475D /* mysql_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mysql_version.h; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		CC6EDAAC287166860053475D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CC6EDAAB287166860053475D /* ZMySQL_mac.framework */,
+				CC6EDAAB287166860053475D /* ZMySQL.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 			);
 			name = "ZMySQL-mac";
 			productName = "ZMySQL-mac";
-			productReference = CC6EDAAB287166860053475D /* ZMySQL_mac.framework */;
+			productReference = CC6EDAAB287166860053475D /* ZMySQL.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -350,7 +350,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.ZMySQL-mac";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = ZMySQL;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -433,7 +433,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.ZMySQL-mac";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = ZMySQL;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
