@@ -6,14 +6,207 @@
 	objectVersion = 55;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CC6EDAAF287166860053475D /* ZMySQL_mac.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDAAE287166860053475D /* ZMySQL_mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC6EDACA287166B80053475D /* my_command.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDAB6287166B80053475D /* my_command.h */; };
+		CC6EDACB287166B80053475D /* mysql_version.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDAB7287166B80053475D /* mysql_version.h */; };
+		CC6EDACC287166B80053475D /* my_compress.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDAB8287166B80053475D /* my_compress.h */; };
+		CC6EDACD287166B80053475D /* mysql_time.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDAB9287166B80053475D /* mysql_time.h */; };
+		CC6EDACE287166B80053475D /* my_list.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDABA287166B80053475D /* my_list.h */; };
+		CC6EDACF287166B80053475D /* field_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDABB287166B80053475D /* field_types.h */; };
+		CC6EDAD0287166B80053475D /* mysql_com.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDABC287166B80053475D /* mysql_com.h */; };
+		CC6EDAD1287166B80053475D /* plugin_auth_common.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDABE287166B80053475D /* plugin_auth_common.h */; };
+		CC6EDAD2287166B80053475D /* udf_registration_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDABF287166B80053475D /* udf_registration_types.h */; };
+		CC6EDAD3287166B80053475D /* client_plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDAC0287166B80053475D /* client_plugin.h */; };
+		CC6EDAD4287166B80053475D /* mysql.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDAC1287166B80053475D /* mysql.h */; };
+		CC6EDAD5287166B80053475D /* mysqld_error.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDAC2287166B80053475D /* mysqld_error.h */; };
+		CC6EDAD6287166B80053475D /* errmsg.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDAC3287166B80053475D /* errmsg.h */; };
+		CC6EDAD7287166B80053475D /* mysqlclient.pc in Resources */ = {isa = PBXBuildFile; fileRef = CC6EDAC6287166B80053475D /* mysqlclient.pc */; };
+		CC6EDAD8287166B80053475D /* libmysqlclient.21.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6EDAC7287166B80053475D /* libmysqlclient.21.dylib */; };
+		CC6EDAD9287166B80053475D /* libmysqlclient.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6EDAC8287166B80053475D /* libmysqlclient.dylib */; };
+		CC6EDADA287166B80053475D /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6EDAC9287166B80053475D /* libmysqlclient.a */; };
+		CC6EDADD287167920053475D /* mysql.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDADC287167920053475D /* mysql.h */; };
+		CC6EDADF287167C50053475D /* ZMySQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6EDADE287167C50053475D /* ZMySQL.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CC6EDAAB287166860053475D /* ZMySQL_mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZMySQL_mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC6EDAAE287166860053475D /* ZMySQL_mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMySQL_mac.h; sourceTree = "<group>"; };
+		CC6EDAB6287166B80053475D /* my_command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = my_command.h; sourceTree = "<group>"; };
+		CC6EDAB7287166B80053475D /* mysql_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mysql_version.h; sourceTree = "<group>"; };
+		CC6EDAB8287166B80053475D /* my_compress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = my_compress.h; sourceTree = "<group>"; };
+		CC6EDAB9287166B80053475D /* mysql_time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mysql_time.h; sourceTree = "<group>"; };
+		CC6EDABA287166B80053475D /* my_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = my_list.h; sourceTree = "<group>"; };
+		CC6EDABB287166B80053475D /* field_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = field_types.h; sourceTree = "<group>"; };
+		CC6EDABC287166B80053475D /* mysql_com.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mysql_com.h; sourceTree = "<group>"; };
+		CC6EDABE287166B80053475D /* plugin_auth_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_auth_common.h; sourceTree = "<group>"; };
+		CC6EDABF287166B80053475D /* udf_registration_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = udf_registration_types.h; sourceTree = "<group>"; };
+		CC6EDAC0287166B80053475D /* client_plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client_plugin.h; sourceTree = "<group>"; };
+		CC6EDAC1287166B80053475D /* mysql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mysql.h; sourceTree = "<group>"; };
+		CC6EDAC2287166B80053475D /* mysqld_error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mysqld_error.h; sourceTree = "<group>"; };
+		CC6EDAC3287166B80053475D /* errmsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = errmsg.h; sourceTree = "<group>"; };
+		CC6EDAC6287166B80053475D /* mysqlclient.pc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mysqlclient.pc; sourceTree = "<group>"; };
+		CC6EDAC7287166B80053475D /* libmysqlclient.21.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmysqlclient.21.dylib; sourceTree = "<group>"; };
+		CC6EDAC8287166B80053475D /* libmysqlclient.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmysqlclient.dylib; sourceTree = "<group>"; };
+		CC6EDAC9287166B80053475D /* libmysqlclient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmysqlclient.a; sourceTree = "<group>"; };
+		CC6EDADB287166CF0053475D /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		CC6EDADC287167920053475D /* mysql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mysql.h; sourceTree = "<group>"; };
+		CC6EDADE287167C50053475D /* ZMySQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZMySQL.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC6EDAA8287166860053475D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC6EDAD9287166B80053475D /* libmysqlclient.dylib in Frameworks */,
+				CC6EDADA287166B80053475D /* libmysqlclient.a in Frameworks */,
+				CC6EDAD8287166B80053475D /* libmysqlclient.21.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
 		CC6EDA9F2871666A0053475D = {
 			isa = PBXGroup;
 			children = (
+				CC6EDAAD287166860053475D /* ZMySQL-mac */,
+				CC6EDAAC287166860053475D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
+		CC6EDAAC287166860053475D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EDAAB287166860053475D /* ZMySQL_mac.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CC6EDAAD287166860053475D /* ZMySQL-mac */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EDADE287167C50053475D /* ZMySQL.swift */,
+				CC6EDADC287167920053475D /* mysql.h */,
+				CC6EDADB287166CF0053475D /* module.modulemap */,
+				CC6EDAB3287166B80053475D /* mysql */,
+				CC6EDAAE287166860053475D /* ZMySQL_mac.h */,
+			);
+			path = "ZMySQL-mac";
+			sourceTree = "<group>";
+		};
+		CC6EDAB3287166B80053475D /* mysql */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EDAB4287166B80053475D /* include */,
+				CC6EDAC4287166B80053475D /* lib */,
+			);
+			path = mysql;
+			sourceTree = "<group>";
+		};
+		CC6EDAB4287166B80053475D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EDAB5287166B80053475D /* mysql */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		CC6EDAB5287166B80053475D /* mysql */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EDAB6287166B80053475D /* my_command.h */,
+				CC6EDAB7287166B80053475D /* mysql_version.h */,
+				CC6EDAB8287166B80053475D /* my_compress.h */,
+				CC6EDAB9287166B80053475D /* mysql_time.h */,
+				CC6EDABA287166B80053475D /* my_list.h */,
+				CC6EDABB287166B80053475D /* field_types.h */,
+				CC6EDABC287166B80053475D /* mysql_com.h */,
+				CC6EDABD287166B80053475D /* mysql */,
+				CC6EDAC1287166B80053475D /* mysql.h */,
+				CC6EDAC2287166B80053475D /* mysqld_error.h */,
+				CC6EDAC3287166B80053475D /* errmsg.h */,
+			);
+			path = mysql;
+			sourceTree = "<group>";
+		};
+		CC6EDABD287166B80053475D /* mysql */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EDABE287166B80053475D /* plugin_auth_common.h */,
+				CC6EDABF287166B80053475D /* udf_registration_types.h */,
+				CC6EDAC0287166B80053475D /* client_plugin.h */,
+			);
+			path = mysql;
+			sourceTree = "<group>";
+		};
+		CC6EDAC4287166B80053475D /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EDAC5287166B80053475D /* pkgconfig */,
+				CC6EDAC7287166B80053475D /* libmysqlclient.21.dylib */,
+				CC6EDAC8287166B80053475D /* libmysqlclient.dylib */,
+				CC6EDAC9287166B80053475D /* libmysqlclient.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		CC6EDAC5287166B80053475D /* pkgconfig */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EDAC6287166B80053475D /* mysqlclient.pc */,
+			);
+			path = pkgconfig;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CC6EDAA6287166860053475D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC6EDADD287167920053475D /* mysql.h in Headers */,
+				CC6EDAD3287166B80053475D /* client_plugin.h in Headers */,
+				CC6EDACD287166B80053475D /* mysql_time.h in Headers */,
+				CC6EDACC287166B80053475D /* my_compress.h in Headers */,
+				CC6EDAD4287166B80053475D /* mysql.h in Headers */,
+				CC6EDACE287166B80053475D /* my_list.h in Headers */,
+				CC6EDAD1287166B80053475D /* plugin_auth_common.h in Headers */,
+				CC6EDAD6287166B80053475D /* errmsg.h in Headers */,
+				CC6EDACB287166B80053475D /* mysql_version.h in Headers */,
+				CC6EDACA287166B80053475D /* my_command.h in Headers */,
+				CC6EDAD0287166B80053475D /* mysql_com.h in Headers */,
+				CC6EDAD2287166B80053475D /* udf_registration_types.h in Headers */,
+				CC6EDAD5287166B80053475D /* mysqld_error.h in Headers */,
+				CC6EDAAF287166860053475D /* ZMySQL_mac.h in Headers */,
+				CC6EDACF287166B80053475D /* field_types.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CC6EDAAA287166860053475D /* ZMySQL-mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC6EDAB0287166860053475D /* Build configuration list for PBXNativeTarget "ZMySQL-mac" */;
+			buildPhases = (
+				CC6EDAA6287166860053475D /* Headers */,
+				CC6EDAA7287166860053475D /* Sources */,
+				CC6EDAA8287166860053475D /* Frameworks */,
+				CC6EDAA9287166860053475D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ZMySQL-mac";
+			productName = "ZMySQL-mac";
+			productReference = CC6EDAAB287166860053475D /* ZMySQL_mac.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		CC6EDAA02871666A0053475D /* Project object */ = {
@@ -21,6 +214,12 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					CC6EDAAA287166860053475D = {
+						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
+					};
+				};
 			};
 			buildConfigurationList = CC6EDAA32871666A0053475D /* Build configuration list for PBXProject "ZMySQL" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -31,12 +230,36 @@
 				Base,
 			);
 			mainGroup = CC6EDA9F2871666A0053475D;
+			productRefGroup = CC6EDAAC287166860053475D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				CC6EDAAA287166860053475D /* ZMySQL-mac */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC6EDAA9287166860053475D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC6EDAD7287166B80053475D /* mysqlclient.pc in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC6EDAA7287166860053475D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC6EDADF287167C50053475D /* ZMySQL.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		CC6EDAA42871666A0053475D /* Debug */ = {
@@ -51,6 +274,179 @@
 			};
 			name = Release;
 		};
+		CC6EDAB1287166860053475D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2P97EM4L4N;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZMySQL-mac/mysql/lib",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.ZMySQL-mac";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ZMySQL-mac\"";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYSTEM_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/ZMySQL-mac/mysql/include\"";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CC6EDAB2287166860053475D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2P97EM4L4N;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZMySQL-mac/mysql/lib",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.ZMySQL-mac";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ZMySQL-mac\"";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYSTEM_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/ZMySQL-mac/mysql/include\"";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -59,6 +455,15 @@
 			buildConfigurations = (
 				CC6EDAA42871666A0053475D /* Debug */,
 				CC6EDAA52871666A0053475D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC6EDAB0287166860053475D /* Build configuration list for PBXNativeTarget "ZMySQL-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC6EDAB1287166860053475D /* Debug */,
+				CC6EDAB2287166860053475D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
