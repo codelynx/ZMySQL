@@ -122,7 +122,7 @@ public class ZMySQLRow: CustomStringConvertible {
 	public var columns: [ZMySQLColumn] {
 		return self.result.columns
 	}
-	subscript<T>(key: String) -> T? {
+	public subscript<T>(key: String) -> T? {
 		if let column = self.result.columnDictionary[key] {
 			let pointer = self.row[column.index]
 			let length = self.lengths[column.index]
@@ -135,7 +135,7 @@ public class ZMySQLRow: CustomStringConvertible {
 	public var description: String {
 		return zip(self.columns, self.values).map { "\($0.0.name): \($0.1)"  }.joined(separator: ", ")
 	}
-	var values: [Any?] {
+	public var values: [Any?] {
 		return self.result.columns.map { $0.value(pointer: self.row[$0.index], length: self.lengths[$0.index]) }
 	}
 }
