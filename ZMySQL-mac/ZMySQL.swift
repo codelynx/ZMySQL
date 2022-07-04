@@ -39,14 +39,23 @@ public class ZMySQLDatabase: CustomStringConvertible {
 	deinit {
 		mysql_close(self.mySQL)
 	}
-	var error: String {
+	public var error: String {
 		return String(cString: mysql_error(mySQL))
 	}
-	var errno: Int {
+	public var errno: Int {
 		return Int(mysql_errno(self.mySQL))
 	}
 	public var description: String {
 		return "\(Self.self): host=\(self.host), port=\(port), user=\(self.username), database=\(self.database)"
+	}
+	public func startTransaction() {
+		self.query("START TRANSACTION;").execute()
+	}
+	public func commit() {
+		self.query("COMMIT;").execute()
+	}
+	public func rollback() {
+		self.query("ROLLBACK;").execute()
 	}
 }
 
