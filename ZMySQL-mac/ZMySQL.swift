@@ -42,6 +42,9 @@ public class ZMySQLDatabase: CustomStringConvertible {
 	var error: String {
 		return String(cString: mysql_error(mySQL))
 	}
+	var errno: Int {
+		return Int(mysql_errno(self.mySQL))
+	}
 	public var description: String {
 		return "\(Self.self): host=\(self.host), port=\(port), user=\(self.username), database=\(self.database)"
 	}
@@ -58,6 +61,10 @@ public class ZMySQLQuery {
 	public func execute() -> ZMySQLResult {
 		mysql_real_query(self.database.mySQL, self.query, UInt(strlen(self.query)))
 		let res = mysql_use_result(self.database.mySQL)
+		if self.database.errno != 0 {
+			print("error:", self.database.error)
+			print("query:", self.query)
+		}
 		return ZMySQLResult(query: self, res: res)
 	}
 }
@@ -129,7 +136,7 @@ public class ZMySQLRow: CustomStringConvertible {
 		return nil
 	}
 	public var description: String {
-		return zip(self.columns, self.values).map { "\($0.0.name): \($0.1)"  }.joined(separator: ", ")
+		return zip(self.columns, self.values).map { "\($0.0.name): \(String(describing: $0.1))"  }.joined(separator: ", ")
 	}
 	public var values: [Any?] {
 		return self.result.columns.map { $0.value(pointer: self.row[$0.index], length: self.lengths[$0.index]) }
