@@ -23,7 +23,6 @@
 		CC6EDAD6287166B80053475D /* errmsg.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDAC3287166B80053475D /* errmsg.h */; };
 		CC6EDAD7287166B80053475D /* mysqlclient.pc in Resources */ = {isa = PBXBuildFile; fileRef = CC6EDAC6287166B80053475D /* mysqlclient.pc */; };
 		CC6EDAD8287166B80053475D /* libmysqlclient.21.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6EDAC7287166B80053475D /* libmysqlclient.21.dylib */; };
-		CC6EDAD9287166B80053475D /* libmysqlclient.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6EDAC8287166B80053475D /* libmysqlclient.dylib */; };
 		CC6EDADA287166B80053475D /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6EDAC9287166B80053475D /* libmysqlclient.a */; };
 		CC6EDADD287167920053475D /* mysql.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6EDADC287167920053475D /* mysql.h */; };
 		CC6EDADF287167C50053475D /* ZMySQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6EDADE287167C50053475D /* ZMySQL.swift */; };
@@ -59,7 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC6EDAD9287166B80053475D /* libmysqlclient.dylib in Frameworks */,
 				CC6EDADA287166B80053475D /* libmysqlclient.a in Frameworks */,
 				CC6EDAD8287166B80053475D /* libmysqlclient.21.dylib in Frameworks */,
 			);

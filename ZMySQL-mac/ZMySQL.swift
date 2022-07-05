@@ -57,6 +57,12 @@ public class ZMySQLDatabase: CustomStringConvertible {
 	public func rollback() {
 		self.query("ROLLBACK;").execute()
 	}
+	static var isLogging: Bool = true
+	static func logging(_ message: Any, file: String = #file, line: Int = #line ) {
+		if self.isLogging {
+			print("mysql:", message)
+		}
+	}
 }
 
 public class ZMySQLQuery {
@@ -68,6 +74,7 @@ public class ZMySQLQuery {
 	}
 	@discardableResult
 	public func execute() -> ZMySQLResult {
+		ZMySQLDatabase.logging("[query] " + self.query)
 		mysql_real_query(self.database.mySQL, self.query, UInt(strlen(self.query)))
 		let res = mysql_use_result(self.database.mySQL)
 		if self.database.errno != 0 {
