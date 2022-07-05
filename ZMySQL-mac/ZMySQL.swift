@@ -23,7 +23,7 @@ public class ZMySQLDatabase: CustomStringConvertible {
 		guard let mySQL = mysql_init(nil) else { fatalError() }
 		let result = mysql_real_connect(mySQL, host, username, password, database, port, nil, 0)
 		if let message = mysql_error(mySQL) {
-			print(String(cString: message))
+			print("error:", String(cString: message))
 		}
 		assert(result == mySQL)
 		if mysql_set_character_set(mySQL, Self.utf8mb4) != 0 { fatalError() }
@@ -139,7 +139,6 @@ public class ZMySQLRow: CustomStringConvertible {
 			let pointer = self.row[column.index]
 			let length = self.lengths[column.index]
 			let result = column.value(pointer: pointer, length: length) as? T
-			print(result ?? "nil")
 			return result
 		}
 		return nil
