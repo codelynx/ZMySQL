@@ -19,11 +19,12 @@ public class ZMySQLDatabase: CustomStringConvertible {
 	let port: UInt32
 	let username: String
 	let database: String
-	public init(host: String, port: UInt32, username: String, password: String, database: String) {
+	public init(host: String, port: UInt32, username: String, password: String, database: String) throws {
 		guard let mySQL = mysql_init(nil) else { fatalError() }
 		let result = mysql_real_connect(mySQL, host, username, password, database, port, nil, 0)
-		if let message = mysql_error(mySQL) {
-			print("error:", String(cString: message))
+		if mysql_errno(mySQL) != 0 {
+			let message = String(cString: mysql_error(mySQL))
+			throw message
 		}
 		assert(result == mySQL)
 		if mysql_set_character_set(mySQL, Self.utf8mb4) != 0 { fatalError() }
@@ -60,7 +61,7 @@ public class ZMySQLDatabase: CustomStringConvertible {
 	static var isLogging: Bool = true
 	static func logging(_ message: Any, file: String = #file, line: Int = #line ) {
 		if self.isLogging {
-			print("mysql:", message)
+			print("[mysql]", message)
 		}
 	}
 }
@@ -74,12 +75,12 @@ public class ZMySQLQuery {
 	}
 	@discardableResult
 	public func execute() -> ZMySQLResult {
-		ZMySQLDatabase.logging("[query] " + self.query)
+		ZMySQLDatabase.logging("query: " + self.query)
 		mysql_real_query(self.database.mySQL, self.query, UInt(strlen(self.query)))
 		let res = mysql_use_result(self.database.mySQL)
 		if self.database.errno != 0 {
-			print("error:", self.database.error)
 			print("query:", self.query)
+			print("|error:", self.database.error)
 		}
 		return ZMySQLResult(query: self, res: res)
 	}
